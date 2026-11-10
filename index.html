@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Marvyn Whittaker: diesel technician moving into fleet, equipment and maintenance data analytics. Evidence by skill area.">
+<title>Marvyn Whittaker Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a repair order for a career. Header block with RO-style fields, a coverage grid, then one line item per skill with its evidence entries. */
+:root {
+  --paper: #EEF1F0;
+  --sheet: #FAFBFA;
+  --ink: #14222A;
+  --muted: #51626B;
+  --rule: #C7D0CF;
+  --dye: #1F47C2;
+  --dye-soft: #E3E9FA;
+  --ok: #1C6A48;
+  --ok-soft: #DDEFE6;
+  --wip: #8A5208;
+  --wip-soft: #F6E9D2;
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "IBM Plex Sans", system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F171B; --sheet: #162127; --ink: #E7EDEB; --muted: #9DB0B6; --rule: #2D3D44;
+    --dye: #9DB2FF; --dye-soft: #1E2A4D; --ok: #74D3A4; --ok-soft: #173427; --wip: #E7AD55; --wip-soft: #3A2C12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F171B; --sheet: #162127; --ink: #E7EDEB; --muted: #9DB0B6; --rule: #2D3D44;
+  --dye: #9DB2FF; --dye-soft: #1E2A4D; --ok: #74D3A4; --ok-soft: #173427; --wip: #E7AD55; --wip-soft: #3A2C12;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+img { max-width: 100%; }
+a { color: var(--dye); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--dye); outline-offset: 2px; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-family: var(--display); font-weight: 600; line-height: 1.05; text-wrap: balance; }
+
+.wrap {
+  max-width: 1060px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- header sheet ---------- */
+.sheet {
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-top: 6px solid var(--ink);
+}
+.masthead { padding: 28px clamp(18px, 4vw, 40px) 30px; display: flex; flex-direction: column; gap: 18px; }
+.masthead h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 700; letter-spacing: -0.005em; text-transform: uppercase; }
+.thesis { font-family: var(--display); font-weight: 500; font-size: clamp(1.45rem, 3.4vw, 2.05rem); line-height: 1.18; max-width: 30ch; text-wrap: balance; }
+.lede { max-width: 66ch; color: var(--muted); }
+.lede strong { color: var(--ink); font-weight: 600; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-family: var(--mono); font-size: 0.86rem; }
+
+.fields { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border-top: 1px solid var(--rule); overflow: hidden; }
+.fields div { box-shadow: 1px 0 0 var(--rule), 0 1px 0 var(--rule); padding: 12px clamp(14px, 2.4vw, 20px) 14px; min-width: 0; }
+.fields dt { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.fields dd { margin: 4px 0 0; font-weight: 500; font-size: 0.95rem; line-height: 1.35; }
+
+/* ---------- section heads ---------- */
+.sec { display: flex; flex-direction: column; gap: 22px; }
+.sec-head { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; }
+.sec-head h2 { font-size: clamp(1.9rem, 4.4vw, 2.6rem); text-transform: uppercase; }
+.sec-head p { max-width: 68ch; color: var(--muted); }
+
+/* ---------- coverage grid ---------- */
+.scroller { overflow-x: auto; border: 1px solid var(--rule); background: var(--sheet); }
+table.cover { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 0.9rem; }
+.cover th, .cover td { border-bottom: 1px solid var(--rule); padding: 10px 8px; text-align: center; }
+.cover tr:last-child th, .cover tr:last-child td { border-bottom: 0; }
+.cover thead th { font-family: var(--mono); font-weight: 500; font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); vertical-align: bottom; line-height: 1.3; }
+.cover tbody th { text-align: left; font-weight: 500; padding-left: 16px; min-width: 230px; }
+.cover tbody th a { color: var(--ink); text-decoration-color: var(--rule); }
+.cover .grp { border-left: 1px solid var(--rule); }
+.dot { display: inline-block; width: 13px; height: 13px; border-radius: 50%; vertical-align: middle; }
+.dot.full { background: var(--ink); }
+.dot.half { border: 2px solid var(--wip); background: var(--wip-soft); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.85rem; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ---------- filter chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip {
+  font: 500 0.78rem/1 var(--mono);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 9px 12px; border: 1px solid var(--rule); border-radius: 2px;
+  background: var(--sheet); color: var(--ink); cursor: pointer;
+}
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
+
+/* ---------- skill line items ---------- */
+.skills { display: flex; flex-direction: column; }
+.skill { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 14px 40px; padding-block: 28px; border-bottom: 1px solid var(--rule); scroll-margin-top: 16px; }
+.skill:first-child { padding-top: 6px; }
+.skill-head { display: flex; flex-direction: column; gap: 10px; }
+.skill-head h3 { font-size: 1.75rem; }
+.ask { font-size: 0.92rem; color: var(--muted); }
+.ask b { display: block; font-family: var(--mono); font-weight: 500; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.entries { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.entry { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 4px 18px; padding-block: 12px; border-top: 1px dashed var(--rule); }
+.entry:first-child { border-top: 0; padding-top: 2px; }
+.src { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.45; padding-top: 3px; }
+.src i { display: block; font-style: normal; color: var(--muted); letter-spacing: 0.02em; text-transform: none; }
+.src.job { color: var(--ink); }
+.src.proj { color: var(--dye); }
+.src.cred { color: var(--ok); }
+.src.next { color: var(--wip); }
+.entry p { max-width: 64ch; }
+.entry .note { display: block; margin-top: 4px; font-size: 0.86rem; color: var(--muted); }
+.empty-note { color: var(--muted); font-size: 0.9rem; padding-block: 6px; }
+
+.tag { display: inline-block; font: 500 0.66rem/1 var(--mono); letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 7px; border-radius: 2px; vertical-align: middle; }
+.tag.done { background: var(--ok-soft); color: var(--ok); }
+.tag.wip { background: var(--wip-soft); color: var(--wip); }
+.tag.pub { background: var(--dye-soft); color: var(--dye); }
+
+/* ---------- projects ---------- */
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+.project { background: var(--sheet); border: 1px solid var(--rule); padding: 22px clamp(16px, 3vw, 26px) 24px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.project.wide { grid-column: 1 / -1; }
+.project h3 { font-size: 1.7rem; }
+.project .meta { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; font-family: var(--mono); font-size: 0.76rem; color: var(--muted); }
+.project p { max-width: 70ch; }
+.project ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border: 1px solid var(--rule); margin: 0; overflow: hidden; }
+.kpis div { box-shadow: 1px 0 0 var(--rule), 0 1px 0 var(--rule); padding: 10px 14px 12px; min-width: 0; }
+.kpis dt { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.kpis dd { margin: 3px 0 0; font-weight: 500; font-size: 0.93rem; line-height: 1.35; font-variant-numeric: tabular-nums; }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.stages li { border: 1px solid var(--rule); border-top: 4px solid var(--rule); padding: 9px 12px 11px; font-size: 0.88rem; line-height: 1.35; }
+.stages li b { display: block; font: 500 0.66rem/1.2 var(--mono); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 5px; color: var(--muted); }
+.stages li.done { border-top-color: var(--ok); }
+.stages li.done b { color: var(--ok); }
+.stages li.todo { border-style: dashed; border-top-style: solid; color: var(--muted); }
+
+/* ---------- monitoring seat ---------- */
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.split > div { background: var(--sheet); padding: 20px clamp(16px, 3vw, 26px) 24px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.split h3 { font-size: 1.4rem; }
+.split ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+
+/* ---------- record ---------- */
+.record { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 48px; }
+.record h3 { font-size: 1.4rem; margin-bottom: 12px; }
+.rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.rows li { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 4px 16px; padding-block: 10px; border-top: 1px solid var(--rule); }
+.rows li:first-child { border-top: 0; padding-top: 0; }
+.rows .when { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.rows .what b { font-weight: 600; }
+.rows .what span { display: block; color: var(--muted); font-size: 0.92rem; }
+.plain { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+
+footer { border-top: 2px solid var(--ink); padding-top: 16px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+footer a { color: var(--ink); }
+
+@media (max-width: 760px) {
+  .wrap { gap: 44px; padding-block: 16px 40px; }
+  .skill { grid-template-columns: minmax(0, 1fr); }
+  .entry { grid-template-columns: minmax(0, 1fr); }
+  .src i { display: inline; }
+  .src i::before { content: " · "; }
+  .rows li { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chip { transition: background-color 120ms, color 120ms, border-color 120ms; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="sheet">
+    <div class="masthead">
+      <p class="label">Maintenance and fleet data analytics · Houston, TX</p>
+      <h1>Marvyn Whittaker</h1>
+      <p class="thesis">I know what the fault code, the repair order and the inspection line mean on the truck, because I spent years writing them.</p>
+      <p class="lede"><strong>Diesel technician moving into equipment and fleet data.</strong> 3+ years in a DOT-regulated commercial truck fleet covering 9 engine makes, after 3 years in automotive service as a customer service advisor and technician. Google Data Analytics and Advanced Data Analytics certificates. Working in SQL, BigQuery, R and Tableau. From November 2026 I work a machine-monitoring desk at a heavy-equipment dealer.</p>
+      <p class="links">
+        <a href="https://github.com/marwhitt">github.com/marwhitt</a>
+        <a href="https://www.linkedin.com/in/marvyn-whittaker-23b41a24a">linkedin.com/in/marvyn-whittaker-23b41a24a</a>
+      </p>
+    </div>
+    <dl class="fields">
+      <div><dt>Fleet worked</dt><dd>DOT-regulated commercial trucks, trailers and reefer units</dd></div>
+      <div><dt>Engine makes</dt><dd>Cummins, Detroit Diesel, PACCAR, Volvo, Mack, Isuzu, Hino, Ford, GMC</dd></div>
+      <div><dt>Bay workload</dt><dd>About 15 vehicles a week, about 2 PM inspections a day</dd></div>
+      <div><dt>Data tools</dt><dd>SQL · BigQuery · R · Tableau · Excel</dd></div>
+      <div><dt>Current seat</dt><dd>Machine Monitoring Specialist, from Nov 2026</dd></div>
+    </dl>
+  </header>
+
+  <section class="sec" aria-labelledby="h-cover">
+    <div class="sec-head">
+      <h2 id="h-cover">Where the evidence sits</h2>
+      <p>Seven skill areas, in the order that postings for equipment monitoring, fleet and reliability analyst roles ask for them, against the places I have evidence for each. Every filled mark is backed by an entry further down the page.</p>
+    </div>
+    <div class="scroller">
+      <table class="cover">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align:left;padding-left:16px">Skill area</th>
+            <th scope="col" class="grp">Diesel tech<br>2022–26</th>
+            <th scope="col">Auto service<br>2020–22</th>
+            <th scope="col" class="grp">FMCSA<br>project</th>
+            <th scope="col">Fleet cost<br>project</th>
+            <th scope="col">R<br>capstone</th>
+            <th scope="col" class="grp">Certificates<br>and training</th>
+            <th scope="col" class="grp">Monitoring<br>seat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a href="#s-equipment">Equipment and failure modes</a></th>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"></td>
+            <td></td>
+            <td></td>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"><span class="dot half" role="img" aria-label="Building now"></span></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="#s-action">Recommendations that get acted on</a></th>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td></td>
+            <td class="grp"></td>
+            <td></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"></td>
+            <td class="grp"></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="#s-records">Maintenance records and data quality</a></th>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td><span class="dot half" role="img" aria-label="Building now"></span></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"></td>
+            <td class="grp"></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="#s-signals">Fault codes, alerts and remote diagnosis</a></th>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td></td>
+            <td class="grp"></td>
+            <td></td>
+            <td></td>
+            <td class="grp"></td>
+            <td class="grp"><span class="dot half" role="img" aria-label="Building now"></span></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="#s-metrics">Analytics tools and fleet measures</a></th>
+            <td class="grp"></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"><span class="dot half" role="img" aria-label="Building now"></span></td>
+            <td><span class="dot half" role="img" aria-label="Building now"></span></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="#s-contact">Customer contact</a></th>
+            <td class="grp"></td>
+            <td><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"></td>
+            <td></td>
+            <td></td>
+            <td class="grp"></td>
+            <td class="grp"><span class="dot half" role="img" aria-label="Building now"></span></td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="#s-rca">Root cause, PM and downtime</a></th>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td></td>
+            <td class="grp"><span class="dot half" role="img" aria-label="Building now"></span></td>
+            <td><span class="dot half" role="img" aria-label="Building now"></span></td>
+            <td></td>
+            <td class="grp"><span class="dot full" role="img" aria-label="Evidence shown"></span></td>
+            <td class="grp"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend">
+      <span><span class="dot full" aria-hidden="true"></span> Evidence shown below</span>
+      <span><span class="dot half" aria-hidden="true"></span> Building now, not finished</span>
+      <span>Blank means I am not claiming it from that source.</span>
+    </p>
+  </section>
+
+  <section class="sec" aria-labelledby="h-skills">
+    <div class="sec-head">
+      <h2 id="h-skills">Evidence by skill</h2>
+      <p>Each entry says where it comes from. Work-history entries describe what I did in the bay and at the counter. Project entries link to public files you can open.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter evidence by source">
+      <span class="label">Show</span>
+      <button type="button" class="chip" id="f-all" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" id="f-job" data-filter="job" aria-pressed="false">On the job</button>
+      <button type="button" class="chip" id="f-proj" data-filter="proj" aria-pressed="false">Projects</button>
+      <button type="button" class="chip" id="f-cred" data-filter="cred" aria-pressed="false">Credentials</button>
+      <button type="button" class="chip" id="f-next" data-filter="next" aria-pressed="false">Monitoring seat</button>
+    </div>
+
+    <div class="skills">
+
+      <article class="skill" id="s-equipment">
+        <div class="skill-head">
+          <h3>Equipment and failure modes</h3>
+          <p class="ask"><b>What the roles ask for</b>Hands-on repair and diagnostic experience. It is the hard requirement in nearly every posting, because the analyst has to know what the data means on the machine.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Diagnosed faults across engine, electrical, drivetrain, brake, chassis and aftertreatment systems on 9 engine makes: Cummins, Detroit Diesel, PACCAR, Volvo, Mack, Isuzu, Hino, Ford and GMC.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Worked aftertreatment (DEF, DPF, SCR, EGR), air brakes and ABS, hydraulic line inspection and repair, truck A/C and Carrier transport refrigeration units, using wiring schematics, a multimeter and an oscilloscope.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Auto service</i></span>
+            <p>About a year of hands-on diagnostics and repair in the bay at National Tire and Battery, after two years at the service counter.</p>
+          </li>
+          <li class="entry" data-src="cred">
+            <span class="src cred">Credential</span>
+            <p>EPA Section 609 MVAC refrigerant handling (July 2026). ASE T6 Electrical/Electronic Systems in progress.</p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="skill" id="s-action">
+        <div class="skill-head">
+          <h3>Recommendations that get acted on</h3>
+          <p class="ask"><b>What the roles ask for</b>Clear, actionable maintenance recommendations, and the follow-up that gets them carried out.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Assessed unit condition and wrote customer status recommendations, ready for pickup or continued work, with the supporting reason.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>The Cummins cooling investigation listed under root cause ended in findings that supported corrective actions on the units affected.</p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>R capstone</i></span>
+            <p>Wrote a stakeholder deck with usage findings and three recommendations for a non-technical audience.
+              <span class="note"><a href="https://github.com/marwhitt/Cyclistic_analysis/blob/HEAD/presentation/Cyclistic_Presentation_Draft2.pdf">Open the deck</a></span></p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="skill" id="s-records">
+        <div class="skill-head">
+          <h3>Maintenance records and data quality</h3>
+          <p class="ask"><b>What the roles ask for</b>Documenting work in the maintenance system of record, and checking that repairs are coded and logged correctly.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Verified that shop report data was logged accurately against the underlying repair orders.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Audited repair-order history to confirm manufacturer campaign completion or flag units kicked back for rework.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Documented findings, fault codes, corrective actions and labor in the fleet CMMS across about 15 vehicles a week. Rated Highly Successful on Documentation in the 2025 performance evaluation.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Auto service</i></span>
+            <p>Logged customer intake, vehicle and contact history and open service opportunities in the shop CRM, following each inquiry from first contact through repair authorization to closed sale.</p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>FMCSA carrier safety</i></span>
+            <p>Mapped every column the pipeline needs against the headers in the downloaded files instead of the documentation. Found three fields that need a transform, not a rename, and one the file does not carry at all.
+              <span class="note"><a href="https://github.com/marwhitt/fmcsa_project/blob/HEAD/docs/column_mapping.md">Open the column mapping</a></span></p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>FMCSA carrier safety</i></span>
+            <p>Wrote the raw-stage validation queries: row counts per table, join-key health on DOT number, date parse health, crash rows by year and census composition by status.
+              <span class="note"><a href="https://github.com/marwhitt/fmcsa_project/blob/HEAD/sql/00_validation/validation_pipeline.sql">Open the validation SQL</a></span></p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>R capstone</i></span>
+            <p>Cleaned 790,000+ trip records in R: standardized two schemas, normalized datetimes to one timezone, removed duplicates and filtered out rides with impossible durations. Kept a day-by-day data journal.
+              <span class="note"><a href="https://github.com/marwhitt/Cyclistic_analysis">Open the repository</a></span></p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="skill" id="s-signals">
+        <div class="skill-head">
+          <h3>Fault codes, alerts and remote diagnosis</h3>
+          <p class="ask"><b>What the roles ask for</b>Reviewing alerts and trouble codes, judging which ones need action, and troubleshooting from machine data before anyone travels to the machine.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Used Cummins INSITE and guided troubleshooting procedures to diagnose recurring and complex engine faults.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Documented the fault codes, findings and corrective actions for each job in the fleet CMMS.</p>
+          </li>
+          <li class="entry" data-src="next">
+            <span class="src next">Monitoring seat<i>From Nov 2026</i></span>
+            <p>Machine-health alerts and fault codes from connected heavy equipment are the daily input of this seat. Method write-ups will be added here in generic terms as I build them.</p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="skill" id="s-metrics">
+        <div class="skill-head">
+          <h3>Analytics tools and fleet measures</h3>
+          <p class="ask"><b>What the roles ask for</b>Collecting and interpreting data from several sources. Spreadsheets come first in most postings, with SQL and dashboards where the role leans analytic.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>FMCSA carrier safety</i></span>
+            <p><span class="tag wip">In progress</span> Defined the measures before writing the pipeline: crash rate per 100 million vehicle miles, with crashes per power unit as the fallback where reported mileage is missing, compared inside fleet-size peer groups. Designed as four BigQuery layers: raw, staging, mart, dashboard.
+              <span class="note"><a href="https://github.com/marwhitt/fmcsa_project/blob/HEAD/fmcsa-project-plan_2.md">Open the project plan</a></span></p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>R capstone</i></span>
+            <p><span class="tag done">Complete</span> Summary statistics and visualizations in R (tidyverse, lubridate, R Markdown) on 790,000+ records, published with the report source.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Auto service</i></span>
+            <p>Reported daily shop sales and service metrics against company targets.</p>
+          </li>
+          <li class="entry" data-src="cred">
+            <span class="src cred">Credential</span>
+            <p>Google Advanced Data Analytics. Google Data Analytics. AI and Machine Learning, MIT Professional Education.</p>
+          </li>
+          <li class="entry" data-src="cred">
+            <span class="src cred">Tools</span>
+            <p>Working in SQL, BigQuery, R, Tableau and Excel.
+              <span class="note">Building next: Python beyond the foundations, multi-table joins, window functions and CTEs in SQL, pivot tables and XLOOKUP in Excel.</span></p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>Fleet cost and downtime</i></span>
+            <p><span class="tag wip">In development</span> Cost drivers, downtime patterns and maintenance priorities by unit, repair category and mileage band, in Excel and SQLite.</p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="skill" id="s-contact">
+        <div class="skill-head">
+          <h3>Customer contact</h3>
+          <p class="ask"><b>What the roles ask for</b>Dealer monitoring roles put the analyst on the phone with equipment owners. Customer service skill is listed as a requirement, not a preference.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Auto service</i></span>
+            <p>Handled about 20 customer intakes a day as customer service advisor: did the initial tire and engine-bay inspection, recommended the inspection scope, then worked with the technician and the customer to agree on the repair and a fair cost.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Auto service</i></span>
+            <p>Handled customer complaints and refund cases normally escalated to the manager, including cases involving insurance carriers.</p>
+          </li>
+          <li class="entry" data-src="next">
+            <span class="src next">Monitoring seat<i>From Nov 2026</i></span>
+            <p>Explaining machine condition to equipment owners and to the service department is part of the seat.</p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="skill" id="s-rca">
+        <div class="skill-head">
+          <h3>Root cause, PM and downtime</h3>
+          <p class="ask"><b>What the roles ask for</b>Analyzing recurring issues, keeping preventive maintenance on interval, and reducing unplanned downtime.</p>
+        </div>
+        <ul class="entries">
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Traced a recurring Cummins cooling system failure pattern through root cause investigation of diagnostic and repair-order data. The findings supported corrective actions aimed at avoiding unnecessary radiator replacements.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Worked every problem in the same five steps: verify the complaint, collect the data, isolate the root cause, correct it, then confirm the fix holds on retest.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Performed about two PM inspections a day, plus DOT annual inspections and DVIR reviews, in a DOT-regulated fleet.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>2nd place, Penske technician inspection competition, Houston area, 2025. Rated Highly Successful on Safety and Cleanliness in the 2025 performance evaluation.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Sequenced PM inspections and guided newer technicians when the supervisor was unavailable, while carrying a share of the PM workload.</p>
+          </li>
+          <li class="entry" data-src="job">
+            <span class="src job">On the job<i>Diesel technician</i></span>
+            <p>Built a personal AI-assisted reference guide for my own PM inspection sequence and documentation across engine makes.</p>
+          </li>
+          <li class="entry" data-src="cred">
+            <span class="src cred">Training</span>
+            <p>Preventative Maintenance training, Penske (2025).</p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>FMCSA carrier safety</i></span>
+            <p><span class="tag wip">In progress</span> Benchmarks the outcomes a roadside inspection produces, driver and vehicle out-of-service rates and violations per inspection, by carrier and fleet-size peer group.</p>
+          </li>
+          <li class="entry" data-src="proj">
+            <span class="src proj">Project<i>Fleet cost and downtime</i></span>
+            <p><span class="tag wip">In development</span> Repeat-failure analysis by unit, repair category and mileage band on a labeled synthetic maintenance dataset.</p>
+          </li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-projects">
+    <div class="sec-head">
+      <h2 id="h-projects">Projects</h2>
+      <p>One finished, two in the build. The status on each is the real status.</p>
+    </div>
+    <div class="projects">
+
+      <article class="project wide">
+        <div class="meta"><span class="tag wip">In progress</span><span>BigQuery · SQL · Tableau</span><span>Public federal data</span></div>
+        <h3>Commercial trucking safety: Texas carriers against their peers</h3>
+        <p>Which Texas-domiciled carriers show unusually high or low safety outcomes once fleet size and activity are accounted for? The project benchmarks carriers on FMCSA-defined measures, surfaces outliers inside fleet-size peer groups, and tracks how the benchmarks move over time. It is framed for a fleet operator who wants to know where they stand.</p>
+        <dl class="kpis">
+          <div><dt>Source</dt><dd>Three FMCSA extracts joined on USDOT number: carrier census, crashes, roadside inspections</dd></div>
+          <div><dt>Snapshot</dt><dd>2026-07-27 · 6.5 GB of CSV</dd></div>
+          <div><dt>Measures</dt><dd>Crashes per 100M VMT · driver and vehicle out-of-service rate · violations per inspection</dd></div>
+          <div><dt>Scope</dt><dd>Texas carriers · crashes 2020–2024 · inspections 2023–2026</dd></div>
+        </dl>
+        <ol class="stages" aria-label="Pipeline status">
+          <li class="done"><b>Done</b>Download scripts and data manifest</li>
+          <li class="done"><b>Done</b>Column mapping checked against real headers</li>
+          <li class="done"><b>Done</b>Raw-stage validation queries written</li>
+          <li class="todo"><b>Open</b>Staging tables</li>
+          <li class="todo"><b>Open</b>KPI and benchmark marts</li>
+          <li class="todo"><b>Open</b>Tableau dashboard</li>
+        </ol>
+        <ul>
+          <li>Crash rows are carrier involvements, so one crash can appear several times. Counts deduplicate on crash ID.</li>
+          <li>Carrier mileage is self-reported and can be stale, so every rate carries the mileage year with it.</li>
+          <li>The inspection file is a rolling three-year window. Inspection measures use 2023–2026 and say so, instead of pretending to reach back to 2020.</li>
+        </ul>
+        <p><a href="https://github.com/marwhitt/fmcsa_project">github.com/marwhitt/fmcsa_project</a></p>
+      </article>
+
+      <article class="project">
+        <div class="meta"><span class="tag wip">In development</span><span>Excel · SQLite · SQL</span></div>
+        <h3>Fleet maintenance cost and downtime</h3>
+        <p>A labeled synthetic maintenance dataset, used to find cost drivers, repeat failures, downtime patterns and maintenance priorities by unit, repair category and mileage band.</p>
+        <p>Not published yet. Synthetic on purpose: no employer or customer data is used.</p>
+      </article>
+
+      <article class="project">
+        <div class="meta"><span class="tag done">Complete</span><span>R · R Markdown · Excel</span></div>
+        <h3>Bike-share rider analysis</h3>
+        <p>Google Data Analytics capstone. Cleaned and analyzed 790,000+ Divvy trip records across the 2019-Q1 and 2020-Q1 datasets to show how annual members and casual riders use the service differently, then delivered a stakeholder deck with three recommendations.</p>
+        <p><a href="https://github.com/marwhitt/Cyclistic_analysis">github.com/marwhitt/Cyclistic_analysis</a></p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-seat">
+    <div class="sec-head">
+      <h2 id="h-seat">The monitoring seat</h2>
+      <p>From November 2026 I work as a Machine Monitoring Specialist at a heavy-equipment dealer: watching machine-health alerts and fault codes from connected equipment, supporting remote diagnosis, and getting the owner and the service department moving before a fault becomes a failure.</p>
+    </div>
+    <div class="split">
+      <div>
+        <h3>What will be added here</h3>
+        <ul>
+          <li>How an alert becomes a triage decision, a work order and a customer call, written as method.</li>
+          <li>Worked examples rebuilt on public or synthetic data.</li>
+          <li>Training and certifications as I complete them.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What stays out</h3>
+        <ul>
+          <li>The names of the employer's and manufacturer's systems.</li>
+          <li>Customer names, machine serial numbers and locations.</li>
+          <li>Screenshots, exports and internal figures of any kind.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-record">
+    <div class="sec-head">
+      <h2 id="h-record">Work record</h2>
+    </div>
+    <div class="record">
+      <div>
+        <h3>Experience</h3>
+        <ul class="rows">
+          <li><span class="when">Nov 2026 –</span><span class="what"><b>Machine Monitoring Specialist</b><span>Heavy-equipment dealer, Houston, TX</span></span></li>
+          <li><span class="when">Dec 2022 – Nov 2026</span><span class="what"><b>Diesel Technician III</b><span>Penske Truck Leasing, Houston, TX</span></span></li>
+          <li><span class="when">Jan 2020 – Dec 2022</span><span class="what"><b>Customer Service Advisor, then Technician</b><span>National Tire and Battery, Houston, TX</span></span></li>
+          <li><span class="when">2018 – 2020</span><span class="what"><b>Earlier</b><span>Production Technician (contract), Valvoline via Adecco · Warehouse Technician, NAPA Auto Parts</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Recognition</h3>
+        <ul class="plain">
+          <li>2nd place, Penske technician inspection competition, Houston area, 2025.</li>
+          <li>Ranked first in billed labor hours among shop technicians, Q3–Q4 2025.</li>
+          <li>Rated Highly Successful on Documentation and on Safety and Cleanliness, 2025 performance evaluation.</li>
+        </ul>
+        <h3 style="margin-top:26px">Certificates and education</h3>
+        <ul class="plain">
+          <li>Google Advanced Data Analytics · Google Data Analytics</li>
+          <li>AI and Machine Learning, MIT Professional Education · Prompt Engineering, Vanderbilt</li>
+          <li>EPA Section 609 MVAC Refrigerant Handling (July 2026)</li>
+          <li>In progress: ASE T6 Electrical/Electronic Systems · Google Project Management</li>
+          <li>Engineering Science coursework, Manchester Community College (2016–2018)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Marvyn Whittaker · Houston, TX</span>
+    <span><a href="https://github.com/marwhitt">GitHub</a> · <a href="https://www.linkedin.com/in/marvyn-whittaker-23b41a24a">LinkedIn</a></span>
+    <span>Updated November 2026</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll('.chip');
+  var entries = document.querySelectorAll('.entry');
+  var skills = document.querySelectorAll('.skill');
+  function apply(filter) {
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.filter === filter ? 'true' : 'false'); });
+    entries.forEach(function (e) { e.hidden = !(filter === 'all' || e.dataset.src === filter); });
+    skills.forEach(function (s) {
+      var shown = s.querySelectorAll('.entry:not([hidden])').length;
+      var note = s.querySelector('.empty-note');
+      if (!shown && !note) {
+        note = document.createElement('p');
+        note.className = 'empty-note';
+        note.textContent = 'Nothing claimed from this source for this skill.';
+        s.querySelector('.entries').after(note);
+      }
+      if (note) note.hidden = shown > 0;
+    });
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.dataset.filter); }); });
+})();
+</script>
+</body>
+</html>
